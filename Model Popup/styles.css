@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+    --pink-color:rgb(241 55 55 / 90%);
+    --white-color:#fff;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(45deg, rgb(65,88,208) 0%, rgb(200, 80, 192) 50%, rgb(255,204,112) 100%);
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+}
+
+.open__modal-btn{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 15px 25px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transition: all 0.5s ease;
+    transform: translate(-50%,-50%);
+}
+
+.open__modal-btn:hover{
+    background: rgb(74, 0, 73);
+    font-weight: 500;
+    color: aliceblue;
+}
+
+/* Modal */
+
+.modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.modal__inner{
+    overflow: hidden;
+    width: 400px;
+    margin: 200px auto;
+    background: var(--white-color);
+    border-radius: 10px;
+
+    opacity: 0;
+    transform: translateY(-200px);
+    transition: all 0.5s ease;
+}
+
+.modal__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px;
+    font-size: 17px;
+    color:  var(--white-color);
+    background: var(--pink-color);
+}
+.modal__header i{
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+.modal__header i:hover{
+    cursor: pointer;
+    transform: scale(1.5);
+}
+
+.modal__body{
+    padding: 14px;
+}
+.modal__body h3{
+    font-size: 25px;
+    color: var(--pink-color);
+}
+
+.modal__footer{
+    display: flex;
+    justify-content: flex-end;
+}
+.modal__footer button{
+    padding: 7px 17px;
+    margin: 14px;
+    color: var(--white-color);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: var(--pink-color);
+    transform: scale(1);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+.modal__footer button:hover{
+    cursor: pointer;
+    transform: scale(1.07);
+    background: rgb(255, 0, 0);
+}
+
+.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal.show .modal__inner{
+    transform: translateY(0);
+    opacity: 1;
+}
